@@ -18,7 +18,7 @@
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message code="sidebar.management.portfolio" /></a>
-					<ul id="sm_expand_1" class="list-unstyled collapse">
+					<ul id="sm_expand_1" class="list-unstyled collapsing">
 						<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message code="sidebar.management.certificate" /></a></li>
 						<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message code="sidebar.management.project" /></a></li>
 						<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message code="sidebar.management.voluntary" /></a></li>
