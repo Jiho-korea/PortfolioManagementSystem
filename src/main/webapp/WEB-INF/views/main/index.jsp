@@ -15,41 +15,252 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootadmin.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/fontawesome-all.min.css">
+<link rel="stylesheet"
+	href="${pageContext.request.contextPath}/css/bootadmin.min.css">
 
-    <title><spring:message code="header.title" /></title>
+<title><spring:message code="header.title" /></title>
+<style type="text/css">
+#main {
+	margin-top: 30px;
+}
+
+#title {
+	background-color: #B92133;
+	color: white;
+}
+
+#content {
+	background-color: #E0E0E0;
+}
+</style>
 </head>
 <body class="bg-light">
 
 
-<c:import url="../included/top.jsp" />
+	<c:import url="../included/top.jsp">
 
-
-<div class="d-flex">
-	<c:import url="../included/left.jsp">
-		<c:param value="${level}" name="level" />
 	</c:import>
 
 
-    <div class="content p-4">
-        <h2 class="mb-4">Blank/Starter</h2>
+	<div class="d-flex justify-content-center align-items-center">
+		<c:import url="../included/left.jsp">
+			<c:param value="${level}" name="level" />
+		</c:import>
+		<c:choose>
+			<c:when test="${level eq 'student'}">
+				<div class="container">
+					<div class="row" id="main">
+						<div class="col-lg-4 col-md-12">
+							<div class="row">
+								<div
+									class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">증명사진</div>
+								<div class="col-8">
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">성명</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">학번</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">
+											생년<br>월일
+										</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">
+											출신<br>고교
+										</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+								</div>
 
-        <div class="card mb-4">
-            <div class="card-body">
-                This is a blank page you can use as a starting point.
-            </div>
-        </div>
-    </div>
-</div>
+							</div>
+							<div class="row mt-2">
+								<div
+									class="col-1 mt-1 mb-1 ml-1 mr-1 d-flex justify-content-center align-items-center"
+									id="title">연락처</div>
 
-<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/bootadmin.min.js"></script>
+								<div class="col-10">
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">주소</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">휴대폰</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+									<div class="row">
+										<div
+											class="col-3 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="title">이메일</div>
+										<div
+											class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+											id="content">내용</div>
+									</div>
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-10 mt-1 ml-1 d-flex justify-content-center align-items-center" id="title">
+									대학성적
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="title">
+									학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="title">
+									평균평점
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									1학년 1학기
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									4.5
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="title">
+									총 평점
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="title">
+									4.5
+								</div>
+							</div>
+							<div class="row mt-2">
+								<div class="col-10 mt-1 ml-1 d-flex justify-content-center align-items-center" id="title">
+									고등학교 성적
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="title">
+									고등학교
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="title">
+									평균등급
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-7 mt-1 ml-1 border-right-10 border-white d-flex justify-content-center align-items-center" id="content">
+									똥통고등학교
+								</div>
+								<div class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center" id="content">
+									1.0
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-4 col-md-12">대칼럼2</div>
+						<div class="col-lg-4 col-md-12">대칼럼3</div>
+						<!-- Force next columns to break to new line -->
+						<div class="w-100"></div>
+
+						<div class="col-lg-4 col-md-12">대칼럼4</div>
+						<div class="col-lg-4 col-md-12">대칼럼5</div>
+						<div class="col-lg-4 col-md-12">대칼럼6</div>
+					</div>
+				</div>
+			</c:when>
+		</c:choose>
+	</div>
+
+	<script defer src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+	<script defer
+		src="${pageContext.request.contextPath}/js/bootstrap.bundle.min.js"></script>
+	<script defer
+		src="${pageContext.request.contextPath}/js/bootadmin.min.js"></script>
 
 </body>
 </html>
