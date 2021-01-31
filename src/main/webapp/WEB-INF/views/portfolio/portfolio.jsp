@@ -303,116 +303,199 @@
 			class="col-lg-4 mb-5 col-md-12 w-100 h-100 d-flex justify-content-center align-items-center">
 			<div
 				class="row w-100 d-flex justify-content-center align-items-center">
-				<div class="col-12 d-flex justify-content-center align-items-center"
-					id="title">SW 제작 능력</div>
-
 				<div
-					class="row mt-2 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
-					style="height: 160px;">
+					class="row w-100 d-flex justify-content-center align-items-center">
 					<div
-						class="col-1 h-100 pt-0 pb-0 d-flex justify-content-center align-items-center"
-						id="title">전공 평균 성적</div>
+						class="col-12 d-flex justify-content-center align-items-center"
+						id="title">SW 제작 능력</div>
 
 					<div
-						class="col-1 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
-						id="content">4.5</div>
+						class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
+						style="height: 142px;">
+						<div
+							class="col-1 h-100 pl-0 pr-0 d-flex justify-content-center align-items-center"
+							id="title">전공 평균 성적</div>
 
-					<div class="col-9 pr-0">
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">HTML</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">JSP실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
+						<div
+							class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">4.5</div>
+
+						<div class="col-9 pr-0">
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+									id="content">HTML</div>
+								<div
+									class="col-1 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+									id="content">JSP실습</div>
+								<div
+									class="col-1 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">JavaScript</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Java응용</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">JavaScript실습</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Java실습</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Database</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Spring</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Database실습</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">Spring실습</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
+							<div class="row">
+								<div
+									class="col-5 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">JSP</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+								<div
+									class="col-4 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">UI/UX실습</div>
+								<div
+									class="col-1 pl-0 pr-0 mt-1 ml-1 d-flex justify-content-center align-items-center"
+									id="content">A+</div>
+							</div>
 						</div>
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">JavaScript</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Java응용</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-						</div>
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">JavaScript실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Java실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-						</div>
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Database</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Spring</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-						</div>
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Database실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">Spring실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-						</div>
-						<div class="row">
-							<div
-								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">JSP</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
-							<div
-								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">UI/UX실습</div>
-							<div
-								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">A+</div>
+					</div>
+
+				</div>
+				<div
+					class="row w-100 d-flex justify-content-center align-items-center">
+					<div
+						class="col-12 mt-3 d-flex justify-content-center align-items-center"
+						id="title">PROJECT 수행 능력</div>
+					<div
+						class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
+						style="height: 87px;">
+						<div
+							class="col-1 h-100 d-flex justify-content-center align-items-center"
+							id="title">자격증</div>
+
+						<div
+							class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">2개</div>
+
+						<div
+							class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">OCJP, 정보처리기사</div>
+					</div>
+					<div
+						class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
+						style="height: 87px;">
+						<div
+							class="col-1 h-100 d-flex justify-content-center align-items-center"
+							id="title">프로젝트</div>
+
+						<div
+							class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">3건</div>
+
+						<div
+							class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">
+							1학년:OOOOOOOO<br>2학년:OOOOOOOO<br>3학년:OOOOOOOO
 						</div>
 					</div>
 				</div>
+
+				<div
+					class="row w-100 d-flex justify-content-center align-items-center">
+					<div
+						class="col-12 mt-3 d-flex justify-content-center align-items-center"
+						id="title">인성 (교과 외 활동)</div>
+					<div
+						class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
+						style="height: 87px;">
+						<div
+							class="col-1 h-100 d-flex justify-content-center align-items-center"
+							id="title">봉사활동</div>
+
+						<div
+							class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">3개</div>
+
+						<div
+							class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">헌혈 10회, 입시 면접 도우미, SW 제작체험교실 도우미</div>
+					</div>
+					<div
+						class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
+						style="height: 87px;">
+						<div
+							class="col-1 h-100 d-flex justify-content-center align-items-center"
+							id="title">행사참여</div>
+
+						<div
+							class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">1건</div>
+
+						<div
+							class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
+							id="content">대학 진학 박람회 부스 운영</div>
+					</div>
+				</div>
 			</div>
+
 		</div>
+
 		<div class="w-100"></div>
+		<%--
 		<!-- Force next columns to break to new line -->
 		<div class="row" id="main">
 			<div class="col-lg-4 col-md-12">대칼럼4</div>
 			<div class="col-lg-4 col-md-12">대칼럼5</div>
 			<div class="col-lg-4 col-md-12">대칼럼6</div>
 		</div>
-
+ 		--%>
 	</div>
 </div>
