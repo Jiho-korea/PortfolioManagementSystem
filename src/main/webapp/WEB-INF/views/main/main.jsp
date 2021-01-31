@@ -46,6 +46,11 @@
 #content {
 	background-color: #E0E0E0;
 }
+
+div#second { 
+  border: 3px solid #B92133;
+  border-top: 0px;
+}
 </style>
 </head>
 <body class="bg-light">
