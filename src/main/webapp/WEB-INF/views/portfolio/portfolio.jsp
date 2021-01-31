@@ -27,7 +27,7 @@
 							class="col-2 w-25 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="title">성명</div>
 						<div
-							class="col-9 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 					<div class="row w-100">
@@ -35,7 +35,7 @@
 							class="col-2 w-25 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="title">학번</div>
 						<div
-							class="col-5 w-50 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-5 pl-0 pr-0 w-50 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 						<div
 							class="col-2 w-25 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
@@ -51,7 +51,7 @@
 							생년<br>월일
 						</div>
 						<div
-							class="col-9 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 					<div class="row w-100">
@@ -61,7 +61,7 @@
 							출신<br>고교
 						</div>
 						<div
-							class="col-9 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 				</div>
@@ -80,7 +80,7 @@
 							class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="title">주소</div>
 						<div
-							class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 					<div class="row">
@@ -88,7 +88,7 @@
 							class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="title">휴대폰</div>
 						<div
-							class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 					<div class="row">
@@ -96,7 +96,7 @@
 							class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="title">이메일</div>
 						<div
-							class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+							class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">내용</div>
 					</div>
 				</div>
@@ -245,7 +245,7 @@
 				<div
 					class="row w-100 mt-1 d-flex justify-content-center align-items-center">
 					<div
-						class="col-3 border-right-10 border-white d-flex justify-content-center align-items-center"
+						class="col-3 pl-0 pr-0 border-right-10 border-white d-flex justify-content-center align-items-center"
 						id="title">이름</div>
 					<div
 						class="col-8 ml-1 d-flex justify-content-center align-items-center"
@@ -307,44 +307,102 @@
 					id="title">SW 제작 능력</div>
 
 				<div
-					class="row w-100 pr-0 pl-0 mt-2 w-100 d-flex align-items-center"
+					class="row mt-2 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"
 					style="height: 160px;">
 					<div
-						class="col-1 h-100 pl-0 pr-0 d-flex justify-content-center align-items-center"
+						class="col-1 h-100 pt-0 pb-0 d-flex justify-content-center align-items-center"
 						id="title">전공 평균 성적</div>
 
 					<div
-						class="col-1 h-100 pl-0 pr-0 ml-1 pr-0 d-flex justify-content-center align-items-center"
+						class="col-1 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
 						id="content">4.5</div>
 
 					<div class="col-9 pr-0">
 						<div class="row">
 							<div
-								class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="title">주소</div>
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">HTML</div>
 							<div
-								class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">내용</div>
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">JSP실습</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
 						</div>
 						<div class="row">
 							<div
-								class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="title">휴대폰</div>
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">JavaScript</div>
 							<div
-								class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">내용</div>
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Java응용</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
 						</div>
 						<div class="row">
 							<div
-								class="col-3 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="title">이메일</div>
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">JavaScript실습</div>
 							<div
-								class="col-8 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-								id="content">내용</div>
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Java실습</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+						</div>
+						<div class="row">
+							<div
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Database</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Spring</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+						</div>
+						<div class="row">
+							<div
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Database실습</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">Spring실습</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+						</div>
+						<div class="row">
+							<div
+								class="col-5 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">JSP</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
+							<div
+								class="col-4 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">UI/UX실습</div>
+							<div
+								class="col-1 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
+								id="content">A+</div>
 						</div>
 					</div>
-
-
 				</div>
 			</div>
 		</div>
