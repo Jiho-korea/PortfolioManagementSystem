@@ -6,6 +6,10 @@
 작    성    일 : 2021.01.31
 작  성  내  용 : 학생의 포트폴리오 화면
 ========================================================================
+작    성    자 : 강지호
+작    성    일 : 2021.02.07
+작  성  내  용 : 학생은 교수 의견이 안보이도록 수정
+========================================================================
 --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -224,77 +228,80 @@
 		</div>
 		<div
 			class="col-lg-4 mb-5 col-md-12 w-100 h-100 d-flex justify-content-center align-items-center">
-			<div class="row w-100 d-flex justify-content-center" id="second">
+			<div class="row w-100 d-flex justify-content-center" id="second" style="height: 600px;"> 
 				<div class="col-11 d-flex justify-content-center align-items-center"
-					id="title">개인능력평가표</div>
+					id="title" style="height: 21px;">개인능력평가표</div>
 
-				<div class="row mt-3 d-flex justify-content-center">
+				<div class="row mt-3 d-flex justify-content-center align-items-center">
 					<div
 						class="col-11 d-flex justify-content-center align-items-center">
 						<img src="${pageContext.request.contextPath}/img/chart.png"
 							alt="Chart Image" width="200">
 					</div>
 				</div>
-				<div
-					class="row w-100 mt-3 d-flex justify-content-center align-items-center">
-					<div
-						class="col-11 d-flex justify-content-center align-items-center"
-						id="title">학과 교수 의견</div>
-				</div>
+				<c:choose>
+					<c:when test="${param.level ne 'student'}">
+						<div
+							class="row w-100 mt-3 d-flex justify-content-center align-items-center">
+							<div
+								class="col-11 d-flex justify-content-center align-items-center"
+								id="title">학과 교수 의견</div>
+						</div>
 
-				<div
-					class="row w-100 mt-1 d-flex justify-content-center align-items-center">
-					<div
-						class="col-3 pl-0 pr-0 border-right-10 border-white d-flex justify-content-center align-items-center"
-						id="title">이름</div>
-					<div
-						class="col-8 ml-1 d-flex justify-content-center align-items-center"
-						id="title">의견</div>
-				</div>
+						<div
+							class="row w-100 mt-1 d-flex justify-content-center align-items-center">
+							<div
+								class="col-3 pl-0 pr-0 border-right-10 border-white d-flex justify-content-center align-items-center"
+								id="title">이름</div>
+							<div
+								class="col-8 ml-1 d-flex justify-content-center align-items-center"
+								id="title">의견</div>
+						</div>
 
-				<div
-					class="row w-100 mt-1 d-flex justify-content-center align-items-center"
-					style="height: 70px;">
-					<div
-						class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
-						id="content">OOO</div>
-					<div
-						class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
-						id="content">내용</div>
-				</div>
+						<div
+							class="row w-100 mt-1 d-flex justify-content-center align-items-center"
+							style="height: 70px;">
+							<div
+								class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
+								id="content">OOO</div>
+							<div
+								class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
+								id="content">내용</div>
+						</div>
 
-				<div
-					class="row w-100 mt-1 d-flex justify-content-center align-items-center"
-					style="height: 70px;">
-					<div
-						class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
-						id="content">OOO</div>
-					<div
-						class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
-						id="content">내용</div>
-				</div>
+						<div
+							class="row w-100 mt-1 d-flex justify-content-center align-items-center"
+							style="height: 70px;">
+							<div
+								class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
+								id="content">OOO</div>
+							<div
+								class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
+								id="content">내용</div>
+						</div>
 
-				<div
-					class="row w-100 mt-1 d-flex justify-content-center align-items-center"
-					style="height: 70px;">
-					<div
-						class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
-						id="content">OOO</div>
-					<div
-						class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
-						id="content">내용</div>
-				</div>
-				<div
-					class="row w-100 mt-1 mb-3 d-flex justify-content-center align-items-center"
-					style="height: 70px;">
-					<div
-						class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
-						id="content">OOO</div>
-					<div
-						class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
-						id="content">내용</div>
-				</div>
-
+						<div
+							class="row w-100 mt-1 d-flex justify-content-center align-items-center"
+							style="height: 70px;">
+							<div
+								class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
+								id="content">OOO</div>
+							<div
+								class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
+								id="content">내용</div>
+						</div>
+						<div
+							class="row w-100 mt-1 mb-3 d-flex justify-content-center align-items-center"
+							style="height: 70px;">
+							<div
+								class="col-3 w-100 h-100 border-right-10 border-white d-flex justify-content-center align-items-center"
+								id="content">OOO</div>
+							<div
+								class="col-8 w-100 h-100 ml-1 d-flex justify-content-center align-items-center"
+								id="content">내용</div>
+						</div>
+					</c:when>
+				</c:choose>
 			</div>
 
 
