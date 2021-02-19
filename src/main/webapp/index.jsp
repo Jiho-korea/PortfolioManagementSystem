@@ -17,7 +17,7 @@
 </head>
 <body>
 	<script defer>
-		location.href = "login"
+		location.href = "main"
 	</script>
 </body>
 </html>
