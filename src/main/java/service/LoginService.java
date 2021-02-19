@@ -17,13 +17,14 @@ public class LoginService {
 	@Autowired
 	MemberRepository memberRepository;
 	
-	public void login(String id, String password) throws Exception{
+	public Member login(String memberId, String memberPw) throws Exception{
 		Member member;
-		if((member=memberRepository.findById(id))==null)
+		if((member=memberRepository.findByMemberId(memberId))==null)
 			throw new RuntimeException("not found user");
-		if(member.getPassword()==null||!member.getPassword().equalsIgnoreCase( sha256(password)))
+		if(member.getMemberPw()==null||!member.getMemberPw().equalsIgnoreCase( sha256(memberPw)))
 			throw new RuntimeException("not match password");
-
+		
+		return member;
 	}
 	
 	// 단방향 해시 암호화

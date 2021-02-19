@@ -63,23 +63,23 @@ div#second {
 
 	<div class="d-flex">
 		<c:import url="../included/left.jsp">
-			<c:param value="${level}" name="level" />
+			<c:param value="${sessionScope.authInfo.memberLevel}" name="memberLevel" />
 		</c:import>
 		<c:choose>
-			<c:when test="${level eq 'student'}">
+			<c:when test="${sessionScope.authInfo.memberLevel eq 'ML03'}">
 				<c:import url="../portfolio/portfolio.jsp">
-					<c:param value="${level}" name="level" />
+					<c:param value="${sessionScope.authInfo.memberLevel}" name="memberLevel" />
 				</c:import>
 			</c:when>
-			<c:when test="${level eq 'professor'}">
+			<c:when test="${sessionScope.authInfo.memberLevel eq 'ML02'}">
 			
 			</c:when>
 			
-			<c:when test="${level eq 'manager'}">
+			<c:when test="${sessionScope.authInfo.memberLevel eq 'ML01'}">
 			
 			</c:when>
 			
-			<c:when test="${level eq 'company'}">
+			<c:when test="${sessionScope.authInfo.memberLevel eq 'ML04'}">
 			
 			</c:when>
 			

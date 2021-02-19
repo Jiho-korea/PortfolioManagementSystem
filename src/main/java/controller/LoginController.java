@@ -42,17 +42,20 @@ public class LoginController {
 	public String loginreq(String securedid, String securedpassword, final HttpSession session) throws Exception{
 
 		PrivateKey privateKey = (PrivateKey) session.getAttribute("_RSA_PRIVATE_Key_");
-		
+		Member member= null;
 		if (privateKey == null) {
             throw new RuntimeException("not found key");
         }
 		
 		try {
-			String id = keyGenerator.decryptRsa(privateKey, securedid);
-			String password = keyGenerator.decryptRsa(privateKey, securedpassword);
+			String memberId = keyGenerator.decryptRsa(privateKey, securedid);
+			String memberPw = keyGenerator.decryptRsa(privateKey, securedpassword);
 			
-			loginService.login(id, password);
-		
+			member = loginService.login(memberId, memberPw);
+			
+			session.setAttribute("authInfo", member);
+			
+			System.out.println(member.getMemberLevel());
 		}catch(Exception e) {
 			throw new ServletException(e.getMessage(), e);
 		}

@@ -32,10 +32,10 @@ public class DataBaseConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/test?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8");
-		dataSource.setUsername("root");
-		dataSource.setPassword("1234");
+		dataSource.setDriverClassName("org.postgresql.Driver");
+		dataSource.setUrl("jdbc:postgresql://ghok.iptime.org:5432/ycpmsdb");
+		dataSource.setUsername("postgres");
+		dataSource.setPassword("0426");
 		
 		return dataSource;
 	}
@@ -85,7 +85,7 @@ public class DataBaseConfig {
 	private Properties jpaProperties() {
         Properties properties = new Properties();
         
-        properties.put("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
+        properties.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         properties.put("hibernate.format_sql", true);
 
         return properties;

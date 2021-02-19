@@ -240,7 +240,7 @@
 					</div>
 				</div>
 				<c:choose>
-					<c:when test="${param.level ne 'student'}">
+					<c:when test="${param.memberLevel ne 'ML03'}">
 						<div
 							class="row w-100 mt-3 d-flex justify-content-center align-items-center">
 							<div
