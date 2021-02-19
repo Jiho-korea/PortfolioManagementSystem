@@ -14,7 +14,7 @@
 
 <!-- Sidebar Start-->
 <c:choose>
-	<c:when test="${param.level eq 'student'}">
+	<c:when test="${param.memberLevel eq 'ML03'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -39,7 +39,7 @@
 
 	</c:when>
 
-	<c:when test="${param.level eq 'professor'}">
+	<c:when test="${param.memberLevel eq 'ML02'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -71,7 +71,7 @@
 		</div>
 	</c:when>
 
-	<c:when test="${param.level eq 'manager'}">
+	<c:when test="${param.memberLevel eq 'ML01'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -103,7 +103,7 @@
 		</div>
 	</c:when>
 
-	<c:when test="${param.level eq 'company'}">
+	<c:when test="${param.memberLevel eq 'ML04'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
