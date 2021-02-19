@@ -30,7 +30,7 @@
     <input type="hidden" id="rsaPublicKeyModulus" value='<%=request.getAttribute("publicKeyModulus")%>'/>
     <input type="hidden" id="rsaPublicKeyExponent" value='<%=request.getAttribute("publicKeyExponent")%>' />
     
-    <form class="login-form" action="${pageContext.request.contextPath}/loginrequest">
+    <form class="login-form" action="${pageContext.request.contextPath}/login" method="post">
       <input type="text" placeholder="username" id="username"/>
       <input type="password" placeholder="password" id="password"/>
       <input type="hidden" id="securedid"  name="securedid"/>
