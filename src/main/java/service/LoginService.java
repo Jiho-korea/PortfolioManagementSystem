@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import entity.AuthInfo;
 import entity.Member;
+import exception.MemberNotFoundException;
 import repository.MemberRepository;
 
 @Service
@@ -19,9 +20,9 @@ public class LoginService {
 	public AuthInfo login(String memberId, String memberPw) throws Exception {
 		Member member;
 		if ((member = memberRepository.findByMemberId(memberId)) == null)
-			throw new RuntimeException("not found user");
+			throw new MemberNotFoundException("not found user");
 		if (member.getMemberPw() == null || !member.getMemberPw().equalsIgnoreCase(sha256(memberPw)))
-			throw new RuntimeException("not match password");
+			throw new MemberNotFoundException("not match password");
 
 		return new AuthInfo(member.getMemberId(), member.getMemberName(), member.getMemberMil(),
 				member.getMemberBirth(), member.getMemberHigh(), member.getMemberAddress(), member.getMemberPhone(),
