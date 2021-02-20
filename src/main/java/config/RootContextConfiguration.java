@@ -9,6 +9,7 @@
 */
 package config;
 
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -16,8 +17,8 @@ import org.springframework.context.annotation.Import;
  * 루트 컨텍스트 설정파일
  */
 @Configuration
-@Import({ MvcConfig.class, ControllerConfig.class , DataBaseConfig.class})
-// @ComponentScan(basePackages = { "service.impl" })
+@Import({ MvcConfig.class, ControllerConfig.class, DataBaseConfig.class })
+@ComponentScan(basePackages = { "service.impl" })
 public class RootContextConfiguration {
 
 }

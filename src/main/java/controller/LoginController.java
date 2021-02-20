@@ -1,21 +1,35 @@
+/*
+========================================================================
+파    일    명 : LoginController.java
+========================================================================
+작    성    자 : 박민환
+작    성    일 : 2021.02.19
+작  성  내  용 : 로그인 Controller 
+========================================================================
+*/
 package controller;
 
 import java.security.PrivateKey;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import entity.AuthInfo;
+import entity.LoginRequest;
+import exception.MemberNotFoundException;
 import service.KeyGenerator;
 import service.LoginService;
 
@@ -23,29 +37,26 @@ import service.LoginService;
 public class LoginController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	@Autowired
+	@Resource(name = "keyGenerator")
 	KeyGenerator keyGenerator;
-
-	@Autowired
+	@Resource(name = "loginService")
 	LoginService loginService;
 
 	@GetMapping("/login")
-	public String test(Model model, final HttpServletResponse response, final HttpServletRequest request,
-			final HttpSession session) throws Exception {
-		if (session != null) {
-			AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
-			if (authInfo != null) {
-				return "redirect:/main";
-			}
-		}
-
+	public String test(LoginRequest loginRequest, Model model, final HttpServletResponse response,
+			final HttpServletRequest request, final HttpSession session) throws Exception {
 		keyGenerator.generate(request, session);
 
 		return "login/login";
 	}
 
 	@PostMapping("/login")
-	public String loginreq(String securedid, String securedpassword, final HttpSession session) throws Exception {
+	public String loginreq(@Valid LoginRequest loginRequest, Errors errors, final HttpServletRequest request,
+			final HttpSession session) throws Exception {
+		if (errors.hasErrors()) {
+			keyGenerator.generate(request, session);
+			return "login/login";
+		}
 
 		PrivateKey privateKey = (PrivateKey) session.getAttribute("_RSA_PRIVATE_Key_");
 		AuthInfo authInfo = null;
@@ -54,17 +65,26 @@ public class LoginController {
 		}
 
 		try {
-			String memberId = keyGenerator.decryptRsa(privateKey, securedid);
-			String memberPw = keyGenerator.decryptRsa(privateKey, securedpassword);
+			String memberId = keyGenerator.decryptRsa(privateKey, loginRequest.getSecuredid());
+			String memberPw = keyGenerator.decryptRsa(privateKey, loginRequest.getSecuredpassword());
 
 			authInfo = loginService.login(memberId, memberPw);
 
 			session.setAttribute("authInfo", authInfo);
 
+		} catch (MemberNotFoundException e) {
+			errors.reject("notFoundMember");
+			keyGenerator.generate(request, session);
+			return "login/login";
 		} catch (Exception e) {
 			throw new ServletException(e.getMessage(), e);
 		}
 
 		return "redirect:/main";
+	}
+
+	@ExceptionHandler(ServletException.class)
+	public String handleServletException() {
+		return "redirect:/login";
 	}
 }

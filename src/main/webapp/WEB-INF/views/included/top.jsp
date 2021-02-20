@@ -29,7 +29,7 @@
 					class="fa fa-user"></i> 홍길동</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="dd_user">
-					<a href="#" class="dropdown-item"><spring:message code="header.profile" /></a> <a href="#"
+					<a href="#" class="dropdown-item"><spring:message code="header.profile" /></a> <a href="${pageContext.request.contextPath}/logout"
 						class="dropdown-item"><spring:message code="header.logout" /></a>
 				</div></li>
 		</ul>
