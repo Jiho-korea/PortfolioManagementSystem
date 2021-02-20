@@ -9,14 +9,11 @@
 */
 package config;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
-import controller.MainController;
-
 @Configuration
-@ComponentScan(basePackages = {"controller", "service"})
+@ComponentScan(basePackages = { "controller" })
 public class ControllerConfig {
 	/*
 	 * @Bean public MainController mainController() { return new MainController(); }

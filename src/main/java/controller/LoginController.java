@@ -1,7 +1,17 @@
+/*
+========================================================================
+파    일    명 : LoginController.java
+========================================================================
+작    성    자 : 박민환
+작    성    일 : 2021.02.19
+작  성  내  용 : 로그인 Controller 
+========================================================================
+*/
 package controller;
 
 import java.security.PrivateKey;
 
+import javax.annotation.Resource;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +20,6 @@ import javax.validation.Valid;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
@@ -28,10 +37,9 @@ import service.LoginService;
 public class LoginController {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
 
-	@Autowired
+	@Resource(name = "keyGenerator")
 	KeyGenerator keyGenerator;
-
-	@Autowired
+	@Resource(name = "loginService")
 	LoginService loginService;
 
 	@GetMapping("/login")
