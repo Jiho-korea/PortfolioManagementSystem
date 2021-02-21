@@ -10,13 +10,14 @@
 <meta charset="utf-8">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
-<script src="${pageContext.request.contextPath}/js/login.js"></script>
-<script src="${pageContext.request.contextPath}/js/jsbn.js"></script>
-<script src="${pageContext.request.contextPath}/js/rsa.js"></script>
-<script src="${pageContext.request.contextPath}/js/prng4.js"></script>
-<script src="${pageContext.request.contextPath}/js/rng.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/login.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/jsbn.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/rsa.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/prng4.js"></script>
+<script defer src="${pageContext.request.contextPath}/js/rng.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/css/login.css">
+<title><spring:message code="header.title" /></title>
 </head>
 <body>
 

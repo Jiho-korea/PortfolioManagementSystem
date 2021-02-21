@@ -29,7 +29,7 @@
 						<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message
 									code="sidebar.management.participation" /></a></li>
 					</ul></li>
-				<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message
+				<li><a href="${pageContext.request.contextPath}/view/portfolio">&nbsp;&nbsp;&nbsp;<spring:message
 							code="sidebar.check.portfolio" /></a></li>
 
 				<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message
