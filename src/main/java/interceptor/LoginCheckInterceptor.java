@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import entity.AuthInfo;
+import vo.AuthInfo;
 
 public class LoginCheckInterceptor implements HandlerInterceptor {
 

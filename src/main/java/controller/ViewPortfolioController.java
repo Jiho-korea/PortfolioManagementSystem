@@ -9,6 +9,7 @@
 */
 package controller;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -16,16 +17,33 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import service.PortfolioService;
+import vo.Portfolio;
 
 @Controller
 public class ViewPortfolioController {
 
 	private static final Logger logger = LoggerFactory.getLogger(ViewPortfolioController.class);
 
-	@RequestMapping("/view/portfolio")
-	public String viewPortfolio(HttpSession session, Model model) {
-		// 포트폴리오 조회 코드 작성 (다른 사람의 portfolio는 못보게 하는 인터셉터 필요)
+	@Resource(name = "portfolioService")
+	PortfolioService portfolioService;
 
+	@RequestMapping("/view/portfolio")
+	public String viewPortfolio(@RequestParam(value = "memberId", required = false) String memberId,
+			HttpSession session, Model model) {
+		// 포트폴리오 조회 코드 작성 (다른 사람의 portfolio는 못보게 하는 인터셉터 필요)
+		if (memberId == null) {
+			return "redirect:/main";
+		}
+
+		try {
+			Portfolio portfolio = portfolioService.getPortfolio(memberId);
+			model.addAttribute("portfolio", portfolio);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return "portfolio/portfolio";
 	}
 

@@ -9,7 +9,7 @@
 */
 package service;
 
-import entity.AuthInfo;
+import vo.AuthInfo;
 
 public interface LoginService {
 	public AuthInfo login(String memberId, String memberPw) throws Exception;
