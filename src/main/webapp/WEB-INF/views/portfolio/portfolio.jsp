@@ -20,6 +20,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -496,12 +497,15 @@ div#second {
 
 								<div
 									class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">3건</div>
+									id="content">${fn:length(portfolio.projects)}건</div>
 
 								<div
 									class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
 									id="content">
-									1학년:OOOOOOOO<br>2학년:OOOOOOOO<br>3학년:OOOOOOOO
+									<c:forEach var="project" items="${portfolio.projects}"
+										varStatus="status">
+									${project.projectName}<br>
+									</c:forEach>
 								</div>
 							</div>
 						</div>

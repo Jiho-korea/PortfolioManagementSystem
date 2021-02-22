@@ -16,11 +16,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import entity.AuthInfo;
 import entity.Member;
 import exception.MemberNotFoundException;
 import repository.MemberRepository;
 import service.LoginService;
+import vo.AuthInfo;
 
 @Service("loginService")
 @Transactional
