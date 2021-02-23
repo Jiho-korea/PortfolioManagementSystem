@@ -14,7 +14,7 @@
 
 <!-- Sidebar Start-->
 <c:choose>
-	<c:when test="${param.memberLevel eq 'ML03'}">
+	<c:when test="${param.memberLevelCode eq 'ML03'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -29,7 +29,7 @@
 						<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message
 									code="sidebar.management.participation" /></a></li>
 					</ul></li>
-				<li><a href="${pageContext.request.contextPath}/view/portfolio?memberId=${sessionScope.authInfo.memberId}">&nbsp;&nbsp;&nbsp;<spring:message
+				<li><a href="${pageContext.request.contextPath}/view/portfolio?memberId=${sessionScope.login.memberId}">&nbsp;&nbsp;&nbsp;<spring:message
 							code="sidebar.check.portfolio" /></a></li>
 
 				<li><a href="#">&nbsp;&nbsp;&nbsp;<spring:message
@@ -39,7 +39,7 @@
 
 	</c:when>
 
-	<c:when test="${param.memberLevel eq 'ML02'}">
+	<c:when test="${param.memberLevelCode eq 'ML02'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -71,7 +71,7 @@
 		</div>
 	</c:when>
 
-	<c:when test="${param.memberLevel eq 'ML01'}">
+	<c:when test="${param.memberLevelCode eq 'ML01'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message
@@ -103,7 +103,7 @@
 		</div>
 	</c:when>
 
-	<c:when test="${param.memberLevel eq 'ML04'}">
+	<c:when test="${param.memberLevelCode eq 'ML04'}">
 		<div class="sidebar sidebar-dark bg-dark">
 			<ul class="list-unstyled">
 				<li><a href="#sm_expand_1" data-toggle="collapse">&nbsp;&nbsp;&nbsp;<spring:message

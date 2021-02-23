@@ -9,8 +9,8 @@
 */
 package service;
 
-import vo.AuthInfo;
+import vo.MemberInfo;
 
 public interface LoginService {
-	public AuthInfo login(String memberId, String memberPw) throws Exception;
+	public MemberInfo login(String memberId, String memberPw) throws Exception;
 }

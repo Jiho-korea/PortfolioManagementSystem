@@ -20,7 +20,7 @@ import entity.Member;
 import exception.MemberNotFoundException;
 import repository.MemberRepository;
 import service.LoginService;
-import vo.AuthInfo;
+import vo.MemberInfo;
 
 @Service("loginService")
 @Transactional
@@ -30,16 +30,16 @@ public class LoginServiceImpl implements LoginService {
 	MemberRepository memberRepository;
 
 	@Override
-	public AuthInfo login(String memberId, String memberPw) throws Exception {
+	public MemberInfo login(String memberId, String memberPw) throws Exception {
 		Member member;
 		if ((member = memberRepository.findByMemberId(memberId)) == null)
 			throw new MemberNotFoundException("not found user");
 		if (member.getMemberPw() == null || !member.getMemberPw().equalsIgnoreCase(sha256(memberPw)))
 			throw new MemberNotFoundException("not match password");
 
-		return new AuthInfo(member.getMemberId(), member.getMemberName(), member.getMemberMil(),
+		return new MemberInfo(member.getMemberId(), member.getMemberName(), member.getMemberMil(),
 				member.getMemberBirth(), member.getMemberHigh(), member.getMemberAddress(), member.getMemberPhone(),
-				member.getMemberEmail(), member.getMemberLevel());
+				member.getMemberEmail(), member.getMemberLevelCode(), member.getMemberGrade());
 	}
 
 	// 단방향 해시 암호화

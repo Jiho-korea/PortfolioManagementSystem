@@ -8,6 +8,8 @@
 <html>
 <head>
 <meta charset="utf-8">
+<link rel="shortcut icon" type="image/x-icon"
+	href="${pageContext.request.contextPath}/img/favicon.ico">
 <script type="text/javascript"
 	src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
 <script defer src="${pageContext.request.contextPath}/js/login.js"></script>

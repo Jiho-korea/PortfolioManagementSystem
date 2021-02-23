@@ -1,28 +1,29 @@
 /*
 ========================================================================
-파    일    명 : AuthInfo.java
+파    일    명 : MemberInfo.java
 ========================================================================
 작    성    자 : 강지호
 작    성    일 : 2021.02.19
-작  성  내  용 : 세션에 담길 로그인 정보
+작  성  내  용 : 세션에 담길 로그인 정보, 비밀번호를 제외한 멤버정보
 ========================================================================
 */
 package vo;
 
-public class AuthInfo {
+public class MemberInfo {
 
 	private String memberId;
 	private String memberName;
-	private String memberMil;
+	private Integer memberMil;
 	private String memberBirth;
 	private String memberHigh;
 	private String memberAddress;
 	private String memberPhone;
 	private String memberEmail;
-	private String memberLevel;
+	private String memberLevelCode;
+	private Integer memberGrade;
 
-	public AuthInfo(String memberId, String memberName, String memberMil, String memberBirth, String memberHigh,
-			String memberAddress, String memberPhone, String memberEmail, String memberLevel) {
+	public MemberInfo(String memberId, String memberName, Integer memberMil, String memberBirth, String memberHigh,
+			String memberAddress, String memberPhone, String memberEmail, String memberLevelCode, Integer memberGrade) {
 		super();
 		this.memberId = memberId;
 		this.memberName = memberName;
@@ -32,7 +33,12 @@ public class AuthInfo {
 		this.memberAddress = memberAddress;
 		this.memberPhone = memberPhone;
 		this.memberEmail = memberEmail;
-		this.memberLevel = memberLevel;
+		this.memberLevelCode = memberLevelCode;
+		this.memberGrade = memberGrade;
+	}
+
+	public MemberInfo() {
+		super();
 	}
 
 	public String getMemberId() {
@@ -51,11 +57,11 @@ public class AuthInfo {
 		this.memberName = memberName;
 	}
 
-	public String getMemberMil() {
+	public Integer getMemberMil() {
 		return memberMil;
 	}
 
-	public void setMemberMil(String memberMil) {
+	public void setMemberMil(Integer memberMil) {
 		this.memberMil = memberMil;
 	}
 
@@ -99,12 +105,20 @@ public class AuthInfo {
 		this.memberEmail = memberEmail;
 	}
 
-	public String getMemberLevel() {
-		return memberLevel;
+	public String getMemberLevelCode() {
+		return memberLevelCode;
 	}
 
-	public void setMemberLevel(String memberLevel) {
-		this.memberLevel = memberLevel;
+	public void setMemberLevelCode(String memberLevelCode) {
+		this.memberLevelCode = memberLevelCode;
+	}
+
+	public Integer getMemberGrade() {
+		return memberGrade;
+	}
+
+	public void setMemberGrade(Integer memberGrade) {
+		this.memberGrade = memberGrade;
 	}
 
 }

@@ -1,3 +1,12 @@
+/*
+========================================================================
+파    일    명 : Project.java
+========================================================================
+작    성    자 : 강지호
+작    성    일 : 2021.02.24
+작  성  내  용 : project 테이블 엔티티 객체
+========================================================================
+*/
 package entity;
 
 import javax.persistence.Column;
@@ -16,7 +25,7 @@ public class Project {
 
 	@Id
 	@Column(name = "project_number")
-	private int projectNumber;
+	private Integer projectNumber;
 
 	@Column(name = "member_id")
 	private String memberId;
@@ -25,13 +34,25 @@ public class Project {
 	private String projectName;
 
 	@Column(name = "project_grade")
-	private int projectGrade;
+	private Integer projectGrade;
 
-	public int getProjectNumber() {
+	public Project(Integer projectNumber, String memberId, String projectName, Integer projectGrade) {
+		super();
+		this.projectNumber = projectNumber;
+		this.memberId = memberId;
+		this.projectName = projectName;
+		this.projectGrade = projectGrade;
+	}
+
+	public Project() {
+		super();
+	}
+
+	public Integer getProjectNumber() {
 		return projectNumber;
 	}
 
-	public void setProjectNumber(int projectNumber) {
+	public void setProjectNumber(Integer projectNumber) {
 		this.projectNumber = projectNumber;
 	}
 
@@ -51,24 +72,12 @@ public class Project {
 		this.projectName = projectName;
 	}
 
-	public int getProjectGrade() {
+	public Integer getProjectGrade() {
 		return projectGrade;
 	}
 
-	public void setProjectGrade(int projectGrade) {
+	public void setProjectGrade(Integer projectGrade) {
 		this.projectGrade = projectGrade;
-	}
-
-	public Project(int projectNumber, String memberId, String projectName, int projectGrade) {
-		super();
-		this.projectNumber = projectNumber;
-		this.memberId = memberId;
-		this.projectName = projectName;
-		this.projectGrade = projectGrade;
-	}
-
-	public Project() {
-		super();
 	}
 
 }
