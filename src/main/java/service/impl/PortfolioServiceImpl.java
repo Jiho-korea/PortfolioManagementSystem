@@ -17,8 +17,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import entity.Project;
+import service.MemberInfoService;
 import service.PortfolioService;
 import service.ProjectListService;
+import vo.MemberInfo;
 import vo.Portfolio;
 
 @Service("portfolioService")
@@ -28,11 +30,17 @@ public class PortfolioServiceImpl implements PortfolioService {
 	@Resource(name = "projectListService")
 	ProjectListService projectListService;
 
+	@Resource(name = "memberInfoService")
+	MemberInfoService memberInfoService;
+
 	@Override
 	public Portfolio getPortfolio(String memberId) throws Exception {
 		Portfolio portfolio = new Portfolio();
+
+		MemberInfo memberInfo = memberInfoService.getMemberInfo(memberId);
 		List<Project> projects = projectListService.listProject(memberId);
 
+		portfolio.setMemberInfo(memberInfo);
 		portfolio.setProjects(projects);
 		return portfolio;
 	}

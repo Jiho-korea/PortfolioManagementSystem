@@ -30,8 +30,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import exception.MemberNotFoundException;
 import service.KeyGenerator;
 import service.LoginService;
-import vo.AuthInfo;
 import vo.LoginRequest;
+import vo.MemberInfo;
 
 @Controller
 public class LoginController {
@@ -59,7 +59,7 @@ public class LoginController {
 		}
 
 		PrivateKey privateKey = (PrivateKey) session.getAttribute("_RSA_PRIVATE_Key_");
-		AuthInfo authInfo = null;
+		MemberInfo memberInfo = null;
 		if (privateKey == null) {
 			throw new RuntimeException("not found key");
 		}
@@ -68,18 +68,17 @@ public class LoginController {
 			String memberId = keyGenerator.decryptRsa(privateKey, loginRequest.getSecuredid());
 			String memberPw = keyGenerator.decryptRsa(privateKey, loginRequest.getSecuredpassword());
 
-			authInfo = loginService.login(memberId, memberPw);
-
-			session.setAttribute("authInfo", authInfo);
+			memberInfo = loginService.login(memberId, memberPw);
+			session.setAttribute("login", memberInfo);
 
 		} catch (MemberNotFoundException e) {
 			errors.reject("notFoundMember");
 			keyGenerator.generate(request, session);
 			return "login/login";
 		} catch (Exception e) {
+			e.printStackTrace();
 			throw new ServletException(e.getMessage(), e);
 		}
-
 		return "redirect:/main";
 	}
 

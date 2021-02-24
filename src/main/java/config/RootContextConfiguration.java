@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Import;
  */
 @Configuration
 @Import({ MvcConfig.class, ControllerConfig.class, DataBaseConfig.class })
-@ComponentScan(basePackages = { "service.impl" })
+@ComponentScan(basePackages = { "service.impl", "repository.custom.impl" })
 public class RootContextConfiguration {
 
 }

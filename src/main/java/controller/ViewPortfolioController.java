@@ -9,7 +9,11 @@
 */
 package controller;
 
+import java.io.PrintWriter;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -19,6 +23,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import exception.MemberNotFoundException;
 import service.PortfolioService;
 import vo.Portfolio;
 
@@ -32,15 +37,27 @@ public class ViewPortfolioController {
 
 	@RequestMapping("/view/portfolio")
 	public String viewPortfolio(@RequestParam(value = "memberId", required = false) String memberId,
-			HttpSession session, Model model) {
+			HttpSession session, Model model, HttpServletResponse response, HttpServletRequest request)
+			throws Exception {
 		// 포트폴리오 조회 코드 작성 (다른 사람의 portfolio는 못보게 하는 인터셉터 필요)
 		if (memberId == null) {
+			System.out.println("null");
 			return "redirect:/main";
 		}
 
 		try {
 			Portfolio portfolio = portfolioService.getPortfolio(memberId);
 			model.addAttribute("portfolio", portfolio);
+			System.out.println("portfolio");
+		} catch (MemberNotFoundException e) {
+			response.setContentType("text/html; charset=UTF-8");
+			PrintWriter out = response.getWriter();
+			out.println("<script>");
+			out.println("alert('잘못된 학번입니다.');");
+			out.println("location.href='" + request.getContextPath() + "/main';");
+			out.println("</script>");
+			out.flush();
+			return null;
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

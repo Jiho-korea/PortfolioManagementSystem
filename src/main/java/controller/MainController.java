@@ -21,7 +21,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import vo.AuthInfo;
+import vo.MemberInfo;
 
 @Controller
 public class MainController {
@@ -30,19 +30,20 @@ public class MainController {
 
 	@RequestMapping("/main")
 	public String main(HttpSession session, Model model) {
-		AuthInfo authInfo = null;
+		MemberInfo memberInfo = null;
 		if (session != null) {
-			authInfo = (AuthInfo) session.getAttribute("authInfo");
+			memberInfo = (MemberInfo) session.getAttribute("login");
 		}
-		switch (authInfo.getMemberLevel()) {
+
+		switch (memberInfo.getMemberLevelCode()) {
 		case "ML01":
-			return "redirect:/view/portfolio?memberId=" + authInfo.getMemberId();
+			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
 		case "ML02":
-			return "redirect:/view/portfolio?memberId=" + authInfo.getMemberId();
+			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
 		case "ML03":
-			return "redirect:/view/portfolio?memberId=" + authInfo.getMemberId();
+			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
 		case "ML04":
-			return "redirect:/view/portfolio?memberId=" + authInfo.getMemberId();
+			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
 		}
 		return "redirect:/login";
 

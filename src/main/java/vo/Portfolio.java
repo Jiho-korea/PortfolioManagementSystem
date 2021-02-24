@@ -14,15 +14,25 @@ import java.util.List;
 import entity.Project;
 
 public class Portfolio {
-	List<Project> projects;
+	private MemberInfo memberInfo;
+	private List<Project> projects;
 
-	public Portfolio(List<Project> projects) {
+	public Portfolio(MemberInfo memberInfo, List<Project> projects) {
 		super();
+		this.memberInfo = memberInfo;
 		this.projects = projects;
 	}
 
 	public Portfolio() {
 		super();
+	}
+
+	public MemberInfo getMemberInfo() {
+		return memberInfo;
+	}
+
+	public void setMemberInfo(MemberInfo memberInfo) {
+		this.memberInfo = memberInfo;
 	}
 
 	public List<Project> getProjects() {

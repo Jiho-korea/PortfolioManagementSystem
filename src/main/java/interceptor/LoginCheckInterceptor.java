@@ -16,16 +16,15 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.web.servlet.HandlerInterceptor;
 
-import vo.AuthInfo;
+import vo.MemberInfo;
 
 public class LoginCheckInterceptor implements HandlerInterceptor {
-
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		HttpSession session = request.getSession(false);
 		if (session != null) {
-			AuthInfo authInfo = (AuthInfo) session.getAttribute("authInfo");
+			MemberInfo authInfo = (MemberInfo) session.getAttribute("login");
 			if (authInfo != null) {
 				return true;
 			}

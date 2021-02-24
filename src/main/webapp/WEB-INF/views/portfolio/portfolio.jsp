@@ -64,8 +64,8 @@ div#second {
 	</c:import>
 	<div class="d-flex">
 		<c:import url="../included/left.jsp">
-			<c:param value="${sessionScope.authInfo.memberLevel}"
-				name="memberLevel" />
+			<c:param value="${sessionScope.login.memberLevelCode}"
+				name="memberLevelCode" />
 		</c:import>
 		<div class="container">
 			<div class="row" id="main">
@@ -81,7 +81,7 @@ div#second {
 									id="title">성명</div>
 								<div
 									class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberName}</div>
 							</div>
 							<div class="row w-100">
 								<div
@@ -89,13 +89,13 @@ div#second {
 									id="title">학번</div>
 								<div
 									class="col-5 pl-0 pr-0 w-50 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberId}</div>
 								<div
 									class="col-2 w-25 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
 									id="title">병역</div>
 								<div
 									class="col-2 w-25 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberMil}</div>
 							</div>
 							<div class="row w-100">
 								<div
@@ -105,7 +105,7 @@ div#second {
 								</div>
 								<div
 									class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberBirth}</div>
 							</div>
 							<div class="row w-100">
 								<div
@@ -115,7 +115,7 @@ div#second {
 								</div>
 								<div
 									class="col-9 pl-0 pr-0 w-75 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberHigh}</div>
 							</div>
 						</div>
 
@@ -134,7 +134,7 @@ div#second {
 									id="title">주소</div>
 								<div
 									class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberAddress}</div>
 							</div>
 							<div class="row">
 								<div
@@ -142,7 +142,7 @@ div#second {
 									id="title">휴대폰</div>
 								<div
 									class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberPhone}</div>
 							</div>
 							<div class="row">
 								<div
@@ -150,7 +150,7 @@ div#second {
 									id="title">이메일</div>
 								<div
 									class="col-8 pl-0 pr-0 mt-1 mb-1 ml-1 d-flex justify-content-center align-items-center"
-									id="content">내용</div>
+									id="content">${portfolio.memberInfo.memberEmail}</div>
 							</div>
 						</div>
 					</div>
@@ -269,7 +269,7 @@ div#second {
 						class="row w-100 d-flex justify-content-center align-items-center">
 						<div
 							class="col-8 mt-1 d-flex justify-content-center align-items-center"
-							id="content">OO고등학교</div>
+							id="content">${portfolio.memberInfo.memberHigh}</div>
 						<div
 							class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center"
 							id="content">1.0</div>
@@ -292,7 +292,7 @@ div#second {
 							</div>
 						</div>
 						<c:choose>
-							<c:when test="${sessionScope.authInfo.memberLevel ne 'ML03'}">
+							<c:when test="${sessionScope.login.memberLevelCode ne 'ML03'}">
 								<div
 									class="row w-100 mt-3 d-flex justify-content-center align-items-center">
 									<div

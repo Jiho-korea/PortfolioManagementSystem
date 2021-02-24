@@ -26,7 +26,7 @@
 					class="fa fa-bell"></i> 3</a></li>
 			<li class="nav-item dropdown"><a href="#" id="dd_user"
 				class="nav-link dropdown-toggle" data-toggle="dropdown"><i
-					class="fa fa-user"></i> 홍길동</a>
+					class="fa fa-user"></i> ${sessionScope.login.memberName}</a>
 				<div class="dropdown-menu dropdown-menu-right"
 					aria-labelledby="dd_user">
 					<a href="#" class="dropdown-item"><spring:message code="header.profile" /></a> <a href="${pageContext.request.contextPath}/logout"
