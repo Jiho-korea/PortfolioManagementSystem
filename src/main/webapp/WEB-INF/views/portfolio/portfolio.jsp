@@ -482,11 +482,16 @@ div#second {
 
 								<div
 									class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">2개</div>
+									id="content">${fn:length(portfolio.certificates)}개</div>
 
 								<div
 									class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">OCJP, 정보처리기사</div>
+									id="content">
+									<c:forEach var="certificate" items="${portfolio.certificates}"
+										varStatus="status">
+									${certificate.certificateName}<br>
+									</c:forEach>
+								</div>
 							</div>
 							<div
 								class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"

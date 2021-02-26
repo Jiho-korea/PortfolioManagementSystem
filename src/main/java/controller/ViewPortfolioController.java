@@ -41,14 +41,12 @@ public class ViewPortfolioController {
 			throws Exception {
 		// 포트폴리오 조회 코드 작성 (다른 사람의 portfolio는 못보게 하는 인터셉터 필요)
 		if (memberId == null) {
-			System.out.println("null");
 			return "redirect:/main";
 		}
 
 		try {
 			Portfolio portfolio = portfolioService.getPortfolio(memberId);
 			model.addAttribute("portfolio", portfolio);
-			System.out.println("portfolio");
 		} catch (MemberNotFoundException e) {
 			response.setContentType("text/html; charset=UTF-8");
 			PrintWriter out = response.getWriter();
