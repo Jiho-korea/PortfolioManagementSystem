@@ -26,24 +26,30 @@ import org.springframework.transaction.annotation.Transactional;
 
 import entity.Certificate;
 import entity.Project;
+import entity.Voluntary;
 import service.CertificateListService;
 import service.MemberInfoService;
 import service.PortfolioService;
 import service.ProjectListService;
+import service.VoluntaryListService;
 import vo.MemberInfo;
 import vo.Portfolio;
 
 @Service("portfolioService")
 @Transactional
 public class PortfolioServiceImpl implements PortfolioService {
+
+	@Resource(name = "memberInfoService")
+	MemberInfoService memberInfoService;
+
 	@Resource(name = "certificateListService")
 	CertificateListService certificateListService;
 
 	@Resource(name = "projectListService")
 	ProjectListService projectListService;
 
-	@Resource(name = "memberInfoService")
-	MemberInfoService memberInfoService;
+	@Resource(name = "voluntaryListService")
+	VoluntaryListService voluntaryListService;
 
 	@Override
 	public Portfolio getPortfolio(String memberId) throws Exception {
@@ -52,10 +58,11 @@ public class PortfolioServiceImpl implements PortfolioService {
 		MemberInfo memberInfo = memberInfoService.getMemberInfo(memberId);
 		List<Certificate> certificates = certificateListService.listCertificate(memberId);
 		List<Project> projects = projectListService.listProject(memberId);
-
+		List<Voluntary> voluntaries = voluntaryListService.listVoluntary(memberId);
 		portfolio.setMemberInfo(memberInfo);
 		portfolio.setCertificates(certificates);
 		portfolio.setProjects(projects);
+		portfolio.setVoluntaries(voluntaries);
 		return portfolio;
 	}
 
