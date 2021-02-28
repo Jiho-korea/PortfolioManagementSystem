@@ -529,11 +529,16 @@ div#second {
 
 								<div
 									class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">3개</div>
+									id="content">${fn:length(portfolio.voluntaries)}건</div>
 
 								<div
 									class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">헌혈 10회, 입시 면접 도우미, SW 제작체험교실 도우미</div>
+									id="content">
+									<c:forEach var="voluntary" items="${portfolio.voluntaries}"
+										varStatus="status">
+									${voluntary.voluntaryName}<br>
+									</c:forEach>
+								</div>
 							</div>
 							<div
 								class="row mt-1 pl-0 pr-0 w-100 d-flex justify-content-center align-items-center"

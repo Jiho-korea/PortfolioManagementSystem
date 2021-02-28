@@ -14,6 +14,10 @@
 수    정    일 : 2021.02.26
 수  정  내  용 : certificates 프로퍼티 추가
 ========================================================================
+수    정    자 : 강지호
+수    정    일 : 2021.02.26
+수  정  내  용 : voluntaries 프로퍼티 추가
+========================================================================
 */
 package vo;
 
@@ -21,17 +25,21 @@ import java.util.List;
 
 import entity.Certificate;
 import entity.Project;
+import entity.Voluntary;
 
 public class Portfolio {
 	private MemberInfo memberInfo;
 	private List<Certificate> certificates;
 	private List<Project> projects;
+	private List<Voluntary> voluntaries;
 
-	public Portfolio(MemberInfo memberInfo, List<Certificate> certificates, List<Project> projects) {
+	public Portfolio(MemberInfo memberInfo, List<Certificate> certificates, List<Project> projects,
+			List<Voluntary> voluntaries) {
 		super();
 		this.memberInfo = memberInfo;
 		this.certificates = certificates;
 		this.projects = projects;
+		this.voluntaries = voluntaries;
 	}
 
 	public Portfolio() {
@@ -62,4 +70,11 @@ public class Portfolio {
 		this.projects = projects;
 	}
 
+	public List<Voluntary> getVoluntaries() {
+		return voluntaries;
+	}
+
+	public void setVoluntaries(List<Voluntary> voluntaries) {
+		this.voluntaries = voluntaries;
+	}
 }
