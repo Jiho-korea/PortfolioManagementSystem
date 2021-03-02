@@ -549,11 +549,16 @@ div#second {
 
 								<div
 									class="col-1 h-100 pl-0 pr-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">1건</div>
+									id="content">${fn:length(portfolio.participations)}건</div>
 
 								<div
 									class="col-9 h-100 pt-0 pb-0 ml-1 d-flex justify-content-center align-items-center"
-									id="content">대학 진학 박람회 부스 운영</div>
+									id="content">
+									<c:forEach var="participation" items="${portfolio.participations}"
+										varStatus="status">
+									${participation.participationName}<br>
+									</c:forEach>
+								</div>
 							</div>
 						</div>
 					</div>
