@@ -25,10 +25,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import entity.Certificate;
+import entity.Participation;
 import entity.Project;
 import entity.Voluntary;
 import service.CertificateListService;
 import service.MemberInfoService;
+import service.ParticipationListService;
 import service.PortfolioService;
 import service.ProjectListService;
 import service.VoluntaryListService;
@@ -40,16 +42,19 @@ import vo.Portfolio;
 public class PortfolioServiceImpl implements PortfolioService {
 
 	@Resource(name = "memberInfoService")
-	MemberInfoService memberInfoService;
+	private MemberInfoService memberInfoService;
 
 	@Resource(name = "certificateListService")
-	CertificateListService certificateListService;
+	private CertificateListService certificateListService;
 
 	@Resource(name = "projectListService")
-	ProjectListService projectListService;
+	private ProjectListService projectListService;
 
 	@Resource(name = "voluntaryListService")
-	VoluntaryListService voluntaryListService;
+	private VoluntaryListService voluntaryListService;
+
+	@Resource(name = "participationListService")
+	private ParticipationListService participationListService;
 
 	@Override
 	public Portfolio getPortfolio(String memberId) throws Exception {
@@ -59,10 +64,12 @@ public class PortfolioServiceImpl implements PortfolioService {
 		List<Certificate> certificates = certificateListService.listCertificate(memberId);
 		List<Project> projects = projectListService.listProject(memberId);
 		List<Voluntary> voluntaries = voluntaryListService.listVoluntary(memberId);
+		List<Participation> participations = participationListService.listParticipation(memberId);
 		portfolio.setMemberInfo(memberInfo);
 		portfolio.setCertificates(certificates);
 		portfolio.setProjects(projects);
 		portfolio.setVoluntaries(voluntaries);
+		portfolio.setParticipations(participations);
 		return portfolio;
 	}
 
