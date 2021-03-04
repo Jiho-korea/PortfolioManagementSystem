@@ -13,6 +13,7 @@ import org.springframework.context.MessageSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+import org.springframework.core.Ordered;
 import org.springframework.web.servlet.config.annotation.DefaultServletHandlerConfigurer;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -21,6 +22,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import interceptor.LoginCheckInterceptor;
+import interceptor.PortfolioAuthCheckInterceptor;
 
 @Configuration
 @EnableWebMvc
@@ -28,6 +30,11 @@ public class MvcConfig implements WebMvcConfigurer {
 	@Bean
 	public LoginCheckInterceptor loginCheckInterceptor() {
 		return new LoginCheckInterceptor();
+	}
+
+	@Bean
+	public PortfolioAuthCheckInterceptor portfolioAuthCheckInterceptor() {
+		return new PortfolioAuthCheckInterceptor();
 	}
 
 	@Override
@@ -56,7 +63,9 @@ public class MvcConfig implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		registry.addInterceptor(loginCheckInterceptor()).addPathPatterns("/main/**", "/view/**");
+		registry.addInterceptor(loginCheckInterceptor()).addPathPatterns("/main/**", "/view/**")
+				.order(Ordered.HIGHEST_PRECEDENCE);
+		registry.addInterceptor(portfolioAuthCheckInterceptor()).addPathPatterns("/view/**").order(1);
 	}
 
 }
