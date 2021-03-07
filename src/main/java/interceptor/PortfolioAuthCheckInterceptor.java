@@ -27,11 +27,12 @@ public class PortfolioAuthCheckInterceptor implements HandlerInterceptor {
 		String memberId = request.getParameter("memberId");
 		if (session != null) {
 			MemberInfo memberInfo = (MemberInfo) session.getAttribute("login");
-			if (memberId == null) {
+			if (memberId == null
+					|| !"ML03".equals(memberInfo.getMemberLevelCode()) && memberInfo.getMemberId().equals(memberId)) {
 				response.setContentType("text/html; charset=UTF-8");
 				PrintWriter out = response.getWriter();
 				out.println("<script>");
-				out.println("alert('잘못된 접근입니다.');");
+				out.println("alert('존재하지 않는 포트폴리오입니다.');");
 				out.println("location.href='" + request.getContextPath() + "/main';");
 				out.println("</script>");
 				out.flush();
