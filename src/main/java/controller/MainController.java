@@ -8,7 +8,7 @@
 ========================================================================
 수    정    자 : 강지호
 수    정    일 : 2021.02.21
-수  정  내  용 : 세션의 MEMBER LEVEL 값에 따라 다른 컨트롤러로 리다이렉트 하도록 변경
+수  정  내  용 : 세션의 member level 값에 따라 다른 컨트롤러로 리다이렉트 하도록 변경
 ========================================================================
 */
 package controller;
@@ -35,18 +35,10 @@ public class MainController {
 			memberInfo = (MemberInfo) session.getAttribute("login");
 		}
 
-		switch (memberInfo.getMemberLevelCode()) {
-		case "ML01":
+		if ("ML03".equals(memberInfo.getMemberLevelCode())) {
 			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
-		case "ML02":
-			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
-		case "ML03":
-			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
-		case "ML04":
-			return "redirect:/view/portfolio?memberId=" + memberInfo.getMemberId();
+		} else {
+			return "redirect:/admin/list/student";
 		}
-		return "redirect:/login";
-
 	}
-
 }
