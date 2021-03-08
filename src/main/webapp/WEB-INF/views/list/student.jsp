@@ -69,15 +69,7 @@ div#second {
 		</c:import>
 		<div class="container">
 			<div class="row" id="main">
-				
-				<%--
-		<!-- Force next columns to break to new line -->
-		<div class="row" id="main">
-			<div class="col-lg-4 col-md-12">대칼럼4</div>
-			<div class="col-lg-4 col-md-12">대칼럼5</div>
-			<div class="col-lg-4 col-md-12">대칼럼6</div>
-		</div>
- 		--%>
+				학생 리스트를 여기에 추가
 			</div>
 		</div>
 	</div>

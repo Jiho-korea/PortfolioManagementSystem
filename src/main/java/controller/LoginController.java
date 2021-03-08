@@ -43,7 +43,7 @@ public class LoginController {
 	LoginService loginService;
 
 	@GetMapping("/login")
-	public String test(LoginRequest loginRequest, Model model, final HttpServletResponse response,
+	public String login(LoginRequest loginRequest, Model model, final HttpServletResponse response,
 			final HttpServletRequest request, final HttpSession session) throws Exception {
 		keyGenerator.generate(request, session);
 
