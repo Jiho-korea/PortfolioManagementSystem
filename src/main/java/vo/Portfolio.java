@@ -22,12 +22,17 @@
 수    정    일 : 2021.03.02
 수  정  내  용 : participations 프로퍼티 추가
 ========================================================================
+수    정    자 : 강지호
+수    정    일 : 2021.03.10
+수  정  내  용 : high 프로퍼티 추가
+========================================================================
 */
 package vo;
 
 import java.util.List;
 
 import entity.Certificate;
+import entity.High;
 import entity.Participation;
 import entity.Project;
 import entity.Voluntary;
@@ -38,19 +43,21 @@ public class Portfolio {
 	private List<Project> projects;
 	private List<Voluntary> voluntaries;
 	private List<Participation> participations;
+	private High high;
+
+	public Portfolio() {
+		super();
+	}
 
 	public Portfolio(MemberInfo memberInfo, List<Certificate> certificates, List<Project> projects,
-			List<Voluntary> voluntaries, List<Participation> participations) {
+			List<Voluntary> voluntaries, List<Participation> participations, High high) {
 		super();
 		this.memberInfo = memberInfo;
 		this.certificates = certificates;
 		this.projects = projects;
 		this.voluntaries = voluntaries;
 		this.participations = participations;
-	}
-
-	public Portfolio() {
-		super();
+		this.high = high;
 	}
 
 	public MemberInfo getMemberInfo() {
@@ -93,4 +100,11 @@ public class Portfolio {
 		this.participations = participations;
 	}
 
+	public High getHigh() {
+		return high;
+	}
+
+	public void setHigh(High high) {
+		this.high = high;
+	}
 }

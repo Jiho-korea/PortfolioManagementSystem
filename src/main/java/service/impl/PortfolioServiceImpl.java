@@ -25,10 +25,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import entity.Certificate;
+import entity.High;
 import entity.Participation;
 import entity.Project;
 import entity.Voluntary;
 import service.CertificateListService;
+import service.GetHighScoreService;
 import service.MemberInfoService;
 import service.ParticipationListService;
 import service.PortfolioService;
@@ -56,6 +58,9 @@ public class PortfolioServiceImpl implements PortfolioService {
 	@Resource(name = "participationListService")
 	private ParticipationListService participationListService;
 
+	@Resource(name = "getHighScoreService")
+	private GetHighScoreService getHighScoreService;
+
 	@Override
 	public Portfolio getPortfolio(String memberId) throws Exception {
 		Portfolio portfolio = new Portfolio();
@@ -65,11 +70,13 @@ public class PortfolioServiceImpl implements PortfolioService {
 		List<Project> projects = projectListService.listProject(memberId);
 		List<Voluntary> voluntaries = voluntaryListService.listVoluntary(memberId);
 		List<Participation> participations = participationListService.listParticipation(memberId);
+		High high = getHighScoreService.getHighScore(memberId);
 		portfolio.setMemberInfo(memberInfo);
 		portfolio.setCertificates(certificates);
 		portfolio.setProjects(projects);
 		portfolio.setVoluntaries(voluntaries);
 		portfolio.setParticipations(participations);
+		portfolio.setHigh(high);
 		return portfolio;
 	}
 
