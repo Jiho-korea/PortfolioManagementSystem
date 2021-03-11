@@ -272,7 +272,16 @@ div#second {
 							id="content">${portfolio.memberInfo.memberHigh}</div>
 						<div
 							class="col-3 mt-1 ml-1 d-flex justify-content-center align-items-center"
-							id="content">1.0</div>
+							id="content">
+							<c:choose>
+								<c:when test="${portfolio.high.highScore eq null}">
+									미입력
+								</c:when>
+								<c:otherwise>
+									${portfolio.high.highScore}
+								</c:otherwise>
+							</c:choose>
+						</div>
 					</div>
 				</div>
 				<div
@@ -513,28 +522,29 @@ div#second {
 										<c:if test="${project.projectGrade eq 1}">
 										${project.projectName},&nbsp;
 										</c:if>
-									</c:forEach><br>
-									2학년:
+									</c:forEach>
+									<br> 2학년:
 									<c:forEach var="project" items="${portfolio.projects}"
 										varStatus="status">
 										<c:if test="${project.projectGrade eq 2}">
 										${project.projectName},&nbsp;
 										</c:if>
-									</c:forEach><br>
-									3학년:
+									</c:forEach>
+									<br> 3학년:
 									<c:forEach var="project" items="${portfolio.projects}"
 										varStatus="status">
 										<c:if test="${project.projectGrade eq 3}">
 										${project.projectName},&nbsp;
 										</c:if>
-									</c:forEach><br>
-									4학년:
+									</c:forEach>
+									<br> 4학년:
 									<c:forEach var="project" items="${portfolio.projects}"
 										varStatus="status">
 										<c:if test="${project.projectGrade eq 4}">
 										${project.projectName},&nbsp;
 										</c:if>
-									</c:forEach><br>
+									</c:forEach>
+									<br>
 								</div>
 							</div>
 						</div>
